@@ -13,7 +13,7 @@ def isSubsequence( s: str, t: str) -> bool:
                 if j >= S-1:
                     return True
                 j += 1
-        return False
+        return True
 
 def check(f):
     def helper(x):
