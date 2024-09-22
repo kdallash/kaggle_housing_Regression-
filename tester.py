@@ -55,5 +55,7 @@ def mergeAlternately( word1: str, word2: str) -> str:
             merged.append(word1[i:])
             
         return merged 
+def a():
+    print ("in a")
 if __name__=="__main__":
     main() 
