@@ -1,8 +1,6 @@
 def main():
-    for i in range(10):
-        th = Thread(target=sleepMe, args=(i, ))
-        th.start()
-        print("Current Threads: %i." % threading.active_count())  
+    prices =[2,4,1]
+    print(maxProfit(prices))
 def isSubsequence( s: str, t: str) -> bool:
         S,T =len(s) , len(t)
         j = 0
@@ -57,5 +55,18 @@ def mergeAlternately( word1: str, word2: str) -> str:
         return merged 
 def a():
     print ("in a")
+
+def maxProfit(prices):
+        buy_price = sell_price = prices[0]
+        n = len(prices)
+        for i  in range(n - 1):
+            if prices[i + 1]  < buy_price and i != n - 2:
+                buy_price = prices[i + 1]
+                sell_price = prices[i + 1]
+            if prices[i + 1] > sell_price:
+                sell_price = prices[i + 1]
+        if sell_price == buy_price:
+            return 0 
+        return sell_price - buy_price 
 if __name__=="__main__":
     main() 
